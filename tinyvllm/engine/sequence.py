@@ -52,6 +52,10 @@ class Sequence:
         return self._num_cached_tokens // self.block_size
     
     @property
+    def num_blocks(self):
+        return (len(self.token_ids) + self.block_size - 1) // self.block_size
+    
+    @property
     def last_token(self):
         return self.token_ids[-1]
     
